@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>MooTabs - Tabs for MooTools</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <script type="text/javascript" src="mootools-1.2.1-core-yc.js"></script>
+    <script type="text/javascript" src="../Source/mootabs-0.1.0-nc.js"></script>
+    <script>
+        window.addEvent('domready', main);
+
+            function main() {
+                var tabs, contents;
+
+                tabs = $$('.tabs');
+                contents = $$('.contents');
+
+                var tabView = new MooTabs(tabs, contents, {autoPlayWait: 5000});
+
+                tabView.addEvent('change', function(tab, content) {
+                    var message = 'Changed to: ' + tab.get('text');
+                    $$('.events').set('text', message);
+                });
+
+                $('next').addEvent('click', function() {
+                    tabView.nextSlide();
+                });
+
+                $('prev').addEvent('click', function() {
+                    tabView.previousSlide();
+                });
+
+                $('stop').addEvent('click', function() {
+                    tabView.stop();
+                });
+
+                $('play').addEvent('click', function() {
+                    tabView.play();
+                });
+
+                tabView.addEvent('click', function() {
+                    alert('c.innerText');
+                });
+            }
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+        <ul class="tabs">
+            <li>Simple to use</li>
+            <li>Easy to extend</li>
+            <li>Very much customizable</li>
+        </ul>
+        <ul class="contents">
+            <li>
+                <h1>MooTabs is very convinient and easy to use.</h1>
+                <p>
+                    Default setup allows you to create Tabpane which auto plays.
+                    The plugin provides several options for customization.
+                </p>
+            </li>
+            <li>
+                <h1>You could easily extend the MooTabs class, thanks to MooTools</h1>
+                <p>
+                    The MooTools architecture allows easy extensions and improvements
+                    without hacking into the library code.
+                </p>
+            </li>
+            <li>
+                <h1>Customize almost everything</h1>
+                <p>
+                    You could customize the transitions of effect, duration,
+                    autoPlay and it's duration as well.
+                </p>
+            </li>
+        </ul>
+        <button id="prev">Prev</button>
+        <button id="next">Next</button>
+        <button id="stop">stop</button>
+        <button id="play">play</button>
+        <span class="events">Events shown here</span>
+    </div>
+</body>
+</html>
