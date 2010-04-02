@@ -6,6 +6,11 @@ switching between the panes.
 
 ![Screenshot](http://nayaab.github.com/MooTabs/screenshot.png)
 
+Demo
+----------
+
+[See it in action](http://nayaab.github.com/MooTabs/).
+
 How to use
 ----------
 
