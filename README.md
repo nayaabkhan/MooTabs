@@ -4,6 +4,8 @@ MooTabs
 Allows creation of Tabbed-Panes and provides transition effects when
 switching between the panes.
 
+![Screenshot](http://nayaab.github.com/MooTabs/screenshot.png)
+
 How to use
 ----------
 
